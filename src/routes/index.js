@@ -5,11 +5,11 @@ import Cart from "@/pages/Cart/Cart";
 import Profile from "@/pages/Profile/Profile";
 import Search from '@/pages/Search/Search'
 export default [
-	{path:'/Index',component:Index},
-	{path:'/Category',component:Category},
-	{path:'/Topic',component:Topic},
-	{path:'/Cart',component:Cart},
-	{path:'/Profile',component:Profile},
-	{path:'/Search',component:Search},
+	{path:'/Index',component:Index,meta:{showTabbar:true}},
+	{path:'/Category',component:Category,meta:{showTabbar:true}},
+	{path:'/Topic',component:Topic,meta:{showTabbar:true}},
+	{path:'/Cart',component:Cart,meta:{showTabbar:true}},
+	{path:'/Profile',component:Profile,meta:{showTabbar:true}},
+	{path:'/Search',component:Search,meta:{showTabbar:true}},
 	{path:'/',redirect:'/Index'}
 ]

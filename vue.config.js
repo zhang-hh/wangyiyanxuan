@@ -11,7 +11,24 @@ module.exports = {
 	lintOnSave:false,//关闭eslint语法检查
 	devServer:{
 		open:true,  //自动打开浏览器
-		proxy:"http://localhost:3000"
+		//proxy:"http://localhost:3000"
+		proxy:{
+			//请求是可以找到4000服务器 可是4000服务没有对应的接口  devserve会主动返回index.html
+			'/3000': {
+				target: 'http://localhost:3000',
+				changeOrigin: true, //允许跨域
+				pathRewrite:{
+					"^/3000":""
+				}
+			},
+			'/search': {
+				target: 'https://m.you.163.com/xhr/search/searchAutoComplete.json',
+				changeOrigin: true, //允许跨域
+				pathRewrite:{
+					"^/search":""
+				}
+			},
+		}
 	},
 	configureWebpack:{
 		resolve:{

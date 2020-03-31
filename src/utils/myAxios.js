@@ -4,7 +4,7 @@ import {BASE_URL} from '@/config';
 const instance = axios.create({
 	baseURL: BASE_URL,
 	timeout: 1000,
-	//headers: {'X-Custom-Header': 'foobar'}
+	headers: {'Content-Type': 'application/x-www-form-urlencoded'}
 });
 
 instance.interceptors.request.use((config) =>{

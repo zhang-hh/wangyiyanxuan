@@ -1,7 +1,11 @@
 <template>
   <div id="app">
     <router-view></router-view>
-    <van-tabbar class="tabbar" route fixed active-color="#ab2b2b">
+    <van-tabbar class="tabbar"
+                route fixed
+                active-color="#ab2b2b"
+                v-show="$route.meta.showTabbar"
+    >
       <van-tabbar-item class="tabbarItem" replace to="/Index">
         <van-icon name="wap-home-o" size="20"/>
         <div>首页</div>
