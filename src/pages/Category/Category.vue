@@ -75,7 +75,9 @@
 	        this.$nextTick(() => {
 	        	//在这里要做两个的滑动 左侧导航和右侧内容区
 		        let categoryListScroll =  this.$refs.categoryList;
-		        new BScroll(categoryListScroll)
+		        new BScroll(categoryListScroll,{
+		            click:true
+		        })
                 let cateNavDatasScroll = this.$refs.cateNavDatas;
                 new BScroll(cateNavDatasScroll)
              })

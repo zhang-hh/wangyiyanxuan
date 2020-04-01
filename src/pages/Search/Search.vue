@@ -27,18 +27,7 @@
                 <h3>热门搜索</h3>
             </header>
             <nav class="list">
-                <a class="item highlight" href="##">新人0元领好物</a>
-                <a class="item" href="##">严选爆品榜</a>
-                <a class="item" href="##">特价包邮￥19.9起</a>
-                <a class="item" href="##">拖鞋</a>
-                <a class="item" href="##">猫粮</a>
-                <a class="item" href="##">纸巾</a>
-                <a class="item" href="##">锅</a>
-                <a class="item" href="##">大米</a>
-                <a class="item" href="##">咖啡</a>
-                <a class="item" href="##">手机壳</a>
-                <a class="item" href="##">无骨鸡爪</a>
-                <a class="item" href="##">收纳</a>
+                <a class="item" :class="{highlight:navIndex === index}" href="##" v-for="(item,index) in maskNavList" :key="index" @click="switchNav(index)">{{item}}</a>
             </nav>
         </div>
         <div class="mask" v-show="searchList">
@@ -59,6 +48,8 @@
 				value: '',
                 searchList:[],
                 isShow:true,
+                maskNavList:["新人0元领好物","严选爆品榜","特价包邮￥19.9起","拖鞋","猫粮","纸巾","锅","大米","咖啡","手机壳","无骨鸡爪","收纳"],
+                navIndex:0,
 			};
 		},
         watch:{
@@ -67,7 +58,7 @@
 		        clearTimeout(this.timeout);
 		        this.timeout = setTimeout(async() => {
 			        let searchListDate = await getSearchList(curVal);
-                    this.searchList = searchListDate.data
+                    this.searchList = searchListDate.data;
                     this.isShow = false
 		        }, 200);
 	        },
@@ -77,9 +68,16 @@
         },
 		methods: {
 			onCancel() {
-				//this.$router.replace(`/${this.$route.query.fromPage}`)
-			}
+				console.log('----')
+				this.$router.replace(`/${this.$route.query.fromPage}`)
+			},
+			switchNav(index){
+				this.navIndex = index;
+            }
 		},
+        mounted(){
+	        console.log(this.$route.query)
+        },
 	}
 </script>
 

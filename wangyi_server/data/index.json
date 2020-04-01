@@ -4192,10 +4192,8 @@
         {
             "backgroundUrl": "",
             "picUrl": "https://yanxuan-item.nosdn.127.net/f961b628a67e5a95150b962a48963b6d.png",
-            "activityPrice": "¥69",
             "subTitle": "今日特价",
-            "originPrice": "¥99",
-            "tag": "",
+            "tag": "今日特价",
             "title": "福利社",
             "targetUrl": "https://m.you.163.com/saleCenter/index",
             "showPicUrl": "https://yanxuan-item.nosdn.127.net/f961b628a67e5a95150b962a48963b6d.png"
@@ -4203,7 +4201,10 @@
         {
             "tag": "1元起包邮",
             "subTitle": "",
+            "activityPrice": "¥16.9",
+            "originPrice": "¥27.9",
             "title": "新人拼团",
+            "picUrl": "https://yanxuan-item.nosdn.127.net/a10ed5c19533c9e1e2abf1d8cb843c24.png",
             "targetUrl": "https://m.you.163.com/pin/item/list"
         }
     ]
