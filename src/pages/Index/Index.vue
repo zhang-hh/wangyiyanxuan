@@ -50,230 +50,232 @@
         </div>
         <div class="indexScroll" ref="indexScroll">
             <div style="height: 3000px">
-                <!--轮播图-->
-                <div class="bannerContainer">
-                    <van-swipe @change="onChange"
-                               height="148"
-                               loop
-                               :autoplay="3000"
-                    >
-                        <!--:autoplay="3000"自动轮播没有加上-->
-                        <van-swipe-item v-for="(item, index) in bannerList" :key="index">
-                            <img v-lazy="item.picUrl" />
-                        </van-swipe-item>
-                        <template #indicator>
-                            <div class="custom-indicator">
-                                <span class="indicator" :class="{active:current === index}" v-for="(item, index) in bannerList" :key="index"></span>
-                            </div>
-                        </template>
-                    </van-swipe>
-                </div>
-                <!--服务政策-->
-                <div class="indexServicePolicy">
-                    <ul class="servicePolicyList">
-                        <li  v-for="(item,index) in serviceList" :key="index">
-                            <div class="servicePolicyItem">
-                                <img :src="item.icon" alt="图标">
-                                <span>{{item.desc}}</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <!--分类列表-->
-                <div class="kingKongModule">
-                    <ul class="kingKongModuleList">
-                        <li class="kingKongModuleItem" v-for="(item,index) in kingKongList" :key="index">
-                            <a :href="item.schemeUrl">
-                                <img :src="item.picUrl" alt="图片">
-                                <span>{{item.text}}</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <!--新人0元购好物-->
-                <div class="indexBigPromotionModule">
-                    <div class="floorTop">
-                        <img src="https://yanxuan.nosdn.127.net/1076a6fb2c68f802aa7604220327201a.gif" alt="新人领好物">
-                        <div class="good">
-                            <img src="https://yanxuan-item.nosdn.127.net/df982186b01140fde36330be228ee62f.png" alt="">
-                        </div>
+                <div>
+                    <!--轮播图-->
+                    <div class="bannerContainer">
+                        <van-swipe @change="onChange"
+                                   height="148"
+                                   loop
+                                   :autoplay="3000"
+                        >
+                            <!--:autoplay="3000"自动轮播没有加上-->
+                            <van-swipe-item v-for="(item, index) in bannerList" :key="index">
+                                <img v-lazy="item.picUrl" />
+                            </van-swipe-item>
+                            <template #indicator>
+                                <div class="custom-indicator">
+                                    <span class="indicator" :class="{active:current === index}" v-for="(item, index) in bannerList" :key="index"></span>
+                                </div>
+                            </template>
+                        </van-swipe>
                     </div>
-                    <div class="bgFloor">
-                        <div class="floorFirst">
-                            <img src="https://yanxuan.nosdn.127.net/c12048a0d85ea67718322341983b964a.png" alt="">
-                        </div>
-                        <div class="floor">
-                            <img src="https://yanxuan.nosdn.127.net/c460d2471c9b588995e9e42f6ecb8e87.png" alt="">
-                        </div>
-                        <ul class="goods">
-                            <li class="goodItem">
-                                <img src="https://yanxuan.nosdn.127.net/55987e8ad3b299a925ddcd646e930c71.png" alt="">
-                                <div class="goodsConent">
-                                    <img src="https://yanxuan-item.nosdn.127.net/ada3a3b2510019e31fcf195a5051af3c.png" alt="">
-                                </div>
-                            </li>
-                            <li class="goodItem">
-                                <img src="https://yanxuan.nosdn.127.net/55987e8ad3b299a925ddcd646e930c71.png" alt="">
-                                <div class="goodsConent">
-                                    <img src="https://yanxuan-item.nosdn.127.net/ada3a3b2510019e31fcf195a5051af3c.png" alt="">
-                                </div>
-                            </li>
-                            <li class="goodItem">
-                                <img src="https://yanxuan.nosdn.127.net/55987e8ad3b299a925ddcd646e930c71.png" alt="">
-                                <div class="goodsConent">
-                                    <img src="https://yanxuan-item.nosdn.127.net/ada3a3b2510019e31fcf195a5051af3c.png" alt="">
-                                </div>
-                            </li>
-                        </ul>
-                        <ul class="goods">
-                            <li class="goodItem">
-                                <img src="https://yanxuan.nosdn.127.net/55987e8ad3b299a925ddcd646e930c71.png" alt="">
-                                <div class="goodsConent">
-                                    <img src="https://yanxuan-item.nosdn.127.net/ada3a3b2510019e31fcf195a5051af3c.png" alt="">
-                                </div>
-                            </li>
-                            <li class="goodItem">
-                                <img src="https://yanxuan.nosdn.127.net/55987e8ad3b299a925ddcd646e930c71.png" alt="">
-                                <div class="goodsConent">
-                                    <img src="https://yanxuan-item.nosdn.127.net/ada3a3b2510019e31fcf195a5051af3c.png" alt="">
-                                </div>
-                            </li>
-                            <li class="goodItem">
-                                <img src="https://yanxuan.nosdn.127.net/55987e8ad3b299a925ddcd646e930c71.png" alt="">
-                                <div class="goodsConent">
-                                    <img src="https://yanxuan-item.nosdn.127.net/ada3a3b2510019e31fcf195a5051af3c.png" alt="">
+                    <!--服务政策-->
+                    <div class="indexServicePolicy">
+                        <ul class="servicePolicyList">
+                            <li  v-for="(item,index) in serviceList" :key="index">
+                                <div class="servicePolicyItem">
+                                    <img :src="item.icon" alt="图标">
+                                    <span>{{item.desc}}</span>
                                 </div>
                             </li>
                         </ul>
                     </div>
-                </div>
-                <!--新人专享礼-->
-                <div class="freshmanModule">
-                    <div class="moduleTitle">
-                        <span> ── </span>
-                        <span class="txt">新人专享礼</span>
-                        <span> ── </span>
-                    </div>
-                    <div class="content">
-                        <div class="imgWrap">
-                            <div class="name">新人专享礼包</div>
-                            <div class="imgInner">
-                                <img src="https://yanxuan.nosdn.127.net/352b0ea9b2d058094956efde167ef852.png" alt="">
-                            </div>
-                        </div>
-                        <div class="right">
-                            <div class="module" v-for="(item,index) in indexActivityList" :key="index">
-                                <a class="activityItem" :href="item.targetUrl">
-                                      <div class="picWrap">
-                                          <div class="picInner">
-                                              <img :src="item.picUrl">
-                                          </div>
-                                          <div :class="{discount:item.activityPrice}">
-                                            <div class="line1">{{item.activityPrice}}</div>
-                                            <div class="line2">{{item.originPrice}}</div>
-                                          </div>
-                                      </div>
-                                      <div class="cnt">
-                                          <div class="title">{{item.title}}</div>
-                                          <div class="subTitle">{{item.tag}}</div>
-                                      </div>
+                    <!--分类列表-->
+                    <div class="kingKongModule">
+                        <ul class="kingKongModuleList">
+                            <li class="kingKongModuleItem" v-for="(item,index) in kingKongList" :key="index">
+                                <a :href="item.schemeUrl">
+                                    <img :src="item.picUrl" alt="图片">
+                                    <span>{{item.text}}</span>
                                 </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--新人0元购好物-->
+                    <div class="indexBigPromotionModule">
+                        <div class="floorTop">
+                            <img src="https://yanxuan.nosdn.127.net/1076a6fb2c68f802aa7604220327201a.gif" alt="新人领好物">
+                            <div class="good">
+                                <img src="https://yanxuan-item.nosdn.127.net/df982186b01140fde36330be228ee62f.png" alt="">
                             </div>
                         </div>
-                    </div>
-                </div>
-                <!--类目热销榜-->
-                <div class="categoryHotSellModule">
-                    <div class="moduleTitle">类目热销榜</div>
-                    <div class="content">
-                        <div class="container">
-                            <div class="line1">
-                                <a :href="item.targetUrl" class="item" v-for="(item,index) in hotSellList[0]" :key="index">
-                                    <div class="categoryName">{{item.categoryName}}</div>
-                                    <img :src="item.showPicUrl" >
-                                </a>
+                        <div class="bgFloor">
+                            <div class="floorFirst">
+                                <img src="https://yanxuan.nosdn.127.net/c12048a0d85ea67718322341983b964a.png" alt="">
                             </div>
-                            <div class="line2">
-                                <a :href="item.targetUrl" class="item" v-for="(item,index) in hotSellList[1]" :key="index">
-                                    <div class="categoryName">{{item.categoryName}}</div>
-                                    <img :src="item.showPicUrl" >
-                                </a>
+                            <div class="floor">
+                                <img src="https://yanxuan.nosdn.127.net/c460d2471c9b588995e9e42f6ecb8e87.png" alt="">
                             </div>
+                            <ul class="goods">
+                                <li class="goodItem">
+                                    <img src="https://yanxuan.nosdn.127.net/55987e8ad3b299a925ddcd646e930c71.png" alt="">
+                                    <div class="goodsConent">
+                                        <img src="https://yanxuan-item.nosdn.127.net/ada3a3b2510019e31fcf195a5051af3c.png" alt="">
+                                    </div>
+                                </li>
+                                <li class="goodItem">
+                                    <img src="https://yanxuan.nosdn.127.net/55987e8ad3b299a925ddcd646e930c71.png" alt="">
+                                    <div class="goodsConent">
+                                        <img src="https://yanxuan-item.nosdn.127.net/ada3a3b2510019e31fcf195a5051af3c.png" alt="">
+                                    </div>
+                                </li>
+                                <li class="goodItem">
+                                    <img src="https://yanxuan.nosdn.127.net/55987e8ad3b299a925ddcd646e930c71.png" alt="">
+                                    <div class="goodsConent">
+                                        <img src="https://yanxuan-item.nosdn.127.net/ada3a3b2510019e31fcf195a5051af3c.png" alt="">
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="goods">
+                                <li class="goodItem">
+                                    <img src="https://yanxuan.nosdn.127.net/55987e8ad3b299a925ddcd646e930c71.png" alt="">
+                                    <div class="goodsConent">
+                                        <img src="https://yanxuan-item.nosdn.127.net/ada3a3b2510019e31fcf195a5051af3c.png" alt="">
+                                    </div>
+                                </li>
+                                <li class="goodItem">
+                                    <img src="https://yanxuan.nosdn.127.net/55987e8ad3b299a925ddcd646e930c71.png" alt="">
+                                    <div class="goodsConent">
+                                        <img src="https://yanxuan-item.nosdn.127.net/ada3a3b2510019e31fcf195a5051af3c.png" alt="">
+                                    </div>
+                                </li>
+                                <li class="goodItem">
+                                    <img src="https://yanxuan.nosdn.127.net/55987e8ad3b299a925ddcd646e930c71.png" alt="">
+                                    <div class="goodsConent">
+                                        <img src="https://yanxuan-item.nosdn.127.net/ada3a3b2510019e31fcf195a5051af3c.png" alt="">
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-            </div>
-                <!--限时购-->
-                <div class="flashSaleModule">
-                    <div class="moduleTitle">
-                        <div class="left">
-                            <span>限时购</span>
-                            <van-count-down class="time" :time="time">
-                                <template v-slot="timeData">
-                                    <span class="item">{{ timeData.hours }}</span>
-                                    <span class="item-l">:</span>
-                                    <span class="item">{{ timeData.minutes }}</span>
-                                    <span class="item-l">:</span>
-                                    <span class="item">{{ timeData.seconds }}</span>
-                                </template>
-                            </van-count-down>
+                    <!--新人专享礼-->
+                    <div class="freshmanModule">
+                        <div class="moduleTitle">
+                            <span> ── </span>
+                            <span class="txt">新人专享礼</span>
+                            <span> ── </span>
                         </div>
-                        <div class="right">
-                            <span>更多</span>
-                            <van-icon class="more" name="arrow" />
-                        </div>
-                    </div>
-                    <div class="cnt">
-                        <div class="cntContainer">
-                            <div class="cntItem" v-for="(item,index) in flashSaleList" :key="index">
-                                <img :src="item.showPicUrl" alt="">
-                                <div class="price">
-                                    <span class="activityPrice">￥{{item.activityPrice}}</span>
-                                    <span class="originPrice">￥{{item.originPrice}}</span>
+                        <div class="content">
+                            <div class="imgWrap">
+                                <div class="name">新人专享礼包</div>
+                                <div class="imgInner">
+                                    <img src="https://yanxuan.nosdn.127.net/352b0ea9b2d058094956efde167ef852.png" alt="">
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div class="module" v-for="(item,index) in indexActivityList" :key="index">
+                                    <a class="activityItem" :href="item.targetUrl">
+                                        <div class="picWrap">
+                                            <div class="picInner">
+                                                <img :src="item.picUrl">
+                                            </div>
+                                            <div :class="{discount:item.activityPrice}">
+                                                <div class="line1">{{item.activityPrice}}</div>
+                                                <div class="line2">{{item.originPrice}}</div>
+                                            </div>
+                                        </div>
+                                        <div class="cnt">
+                                            <div class="title">{{item.title}}</div>
+                                            <div class="subTitle">{{item.tag}}</div>
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!--类目热销榜-->
+                    <div class="categoryHotSellModule">
+                        <div class="moduleTitle">类目热销榜</div>
+                        <div class="content">
+                            <div class="container">
+                                <div class="line1">
+                                    <a :href="item.targetUrl" class="item" v-for="(item,index) in hotSellList[0]" :key="index">
+                                        <div class="categoryName">{{item.categoryName}}</div>
+                                        <img :src="item.showPicUrl" >
+                                    </a>
+                                </div>
+                                <div class="line2">
+                                    <a :href="item.targetUrl" class="item" v-for="(item,index) in hotSellList[1]" :key="index">
+                                        <div class="categoryName">{{item.categoryName}}</div>
+                                        <img :src="item.showPicUrl" >
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--限时购-->
+                    <div class="flashSaleModule">
+                        <div class="moduleTitle">
+                            <div class="left">
+                                <span>限时购</span>
+                                <van-count-down class="time" :time="time">
+                                    <template v-slot="timeData">
+                                        <span class="item">{{ timeData.hours }}</span>
+                                        <span class="item-l">:</span>
+                                        <span class="item">{{ timeData.minutes }}</span>
+                                        <span class="item-l">:</span>
+                                        <span class="item">{{ timeData.seconds }}</span>
+                                    </template>
+                                </van-count-down>
+                            </div>
+                            <div class="right">
+                                <span>更多</span>
+                                <van-icon class="more" name="arrow" />
+                            </div>
+                        </div>
+                        <div class="cnt">
+                            <div class="cntContainer">
+                                <div class="cntItem" v-for="(item,index) in flashSaleList" :key="index">
+                                    <img :src="item.showPicUrl" alt="">
+                                    <div class="price">
+                                        <span class="activityPrice">￥{{item.activityPrice}}</span>
+                                        <span class="originPrice">￥{{item.originPrice}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                </div>
-                <!--新品首发-->
-                <div class="newItemModule">
-                    <div class="moduleTitle">
-                        <div class="left">新品首发</div>
-                        <div class="right">
-                            <span>更多</span>
-                            <van-icon class="more" name="arrow" />
-                        </div>
                     </div>
-                    <div class="cnt">
-                        <div class="cntContainer">
-                            <div class="cntItem" v-for="(item,index) in newItemList" :key="index">
-                                <img :src="item.primaryPicUrl" alt="">
-                                <div class="desc">{{item.name}}</div>
-                                <div class="price">￥{{item.retailPrice}}</div>
+                    <!--新品首发-->
+                    <div class="newItemModule">
+                        <div class="moduleTitle">
+                            <div class="left">新品首发</div>
+                            <div class="right">
+                                <span>更多</span>
+                                <van-icon class="more" name="arrow" />
+                            </div>
+                        </div>
+                        <div class="cnt">
+                            <div class="cntContainer">
+                                <div class="cntItem" v-for="(item,index) in newItemList" :key="index">
+                                    <img :src="item.primaryPicUrl" alt="">
+                                    <div class="desc">{{item.name}}</div>
+                                    <div class="price">￥{{item.retailPrice}}</div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!--严选超市-->
-                <div class="shoppingGuideModule">
-                    <div class="item" v-for="(item, index) in shoppingGuideList" :key="index">
-                        <div class="title">{{item.styleItem.title}}</div>
-                        <div class="desc">{{item.styleItem.desc}}</div>
-                        <div class="pic" v-for="(picUrl,idnex) in item.styleItem.picUrlList" :key="idnex">
-                            <img class="picItem" :src="picUrl" alt="">
+                    <!--严选超市-->
+                    <div class="shoppingGuideModule">
+                        <div class="item" v-for="(item, index) in shoppingGuideList" :key="index">
+                            <div class="title">{{item.styleItem.title}}</div>
+                            <div class="desc">{{item.styleItem.desc}}</div>
+                            <div class="pic" v-for="(picUrl,idnex) in item.styleItem.picUrlList" :key="idnex">
+                                <img class="picItem" :src="picUrl" alt="">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!--底部-->
-                <div class="foottWrap">
-                    <div class="bd">
-                        <div class="goApp">下载APP</div>
-                        <div class="goWeb">电脑版</div>
+                    <!--底部-->
+                    <div class="foottWrap">
+                        <div class="bd">
+                            <div class="goApp">下载APP</div>
+                            <div class="goWeb">电脑版</div>
+                        </div>
+                        <p class="copyright">
+                            <span>网易公司版权所有 © 1997-</span>
+                            <span>食品经营许可证：JY13301080111719</span>
+                        </p>
                     </div>
-                    <p class="copyright">
-                        <span>网易公司版权所有 © 1997-</span>
-                        <span>食品经营许可证：JY13301080111719</span>
-                    </p>
                 </div>
         </div>
 
@@ -317,8 +319,13 @@
 	        onChange(index) {
 		        this.current = index;
 	        },
+
+	        scroll(e){
+		        console.log(e)
+            },
             /*回到顶部*/
 	        backTop(){
+
 		        this.scroll.scrollTo(0,0,500)
             },
         },
@@ -356,6 +363,7 @@
             this.$nextTick(() =>{
                 let indexScroll = this.$refs.indexScroll;
                 this.scroll = new BScroll(indexScroll,{
+                	click: true,
                     bounce:true, //是否启用回弹动画效果
 	                momentum: true,// 当快速滑动时是否开启滑动惯性
                     momentumLimitDistance:5,
@@ -364,21 +372,27 @@
                         fade:true,
                         interactive:false
                     },
+	                probeType: 3, //除了实时派发 scroll 事件，在 swipe 的情况下仍然能实时派发 scroll 事件
                     mouseWheel:true, //允许鼠标滚动
 	                HWCompositing: true //是否启用硬件加速
                 })
-                this.scroll.on('scroll',(pos) => {
-                	if (pos.y < -1000) this.btnFlag = true
-                    else this.btnFlag = false
+                this.$nextTick(() => {
+	                this.scroll.on('scroll',(pos) => {
+		                if (pos.y < -800) this.btnFlag = true
+		                else this.btnFlag = false
+	                })
                 })
             })
 
 
         },
+        beforeDestroy(){
+			this.scroll.destroy();
+        }
 	}
 </script>
 
-<style scoped lang="stylus">
+<style lang="stylus">
 .indexContainer
     background-color #eee
     .indexHd
@@ -1011,6 +1025,12 @@
                 display flex
                 flex-direction column
                 font-size 24px
+        .bscroll-vertical-scrollbar
+            width 8px!important
+            margin-right 5px!important
+            .bscroll-indicator
+                width 8px!important
+                margin-right 5px!important
     .goTop
         height 60px
         width 60px

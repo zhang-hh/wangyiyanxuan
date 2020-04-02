@@ -3,7 +3,7 @@
         <div class="header">
             <div class="headerContent">
                 <i class="iconfont icon-search1187938easyiconnet"></i>
-                <span @click="$router.replace({path:'/Search',query:{fromPage:'Search'}})" class="placeholder">搜索商品, 共24802款好物</span>
+                <span @click="$router.replace({path:'/Search',query:{fromPage:'Category'}})" class="placeholder">搜索商品, 共24802款好物</span>
             </div>
         </div>
         <div class="categoryList" ref="categoryList">

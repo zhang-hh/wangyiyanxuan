@@ -28,6 +28,14 @@ module.exports = {
 					"^/search":""
 				}
 			},
+			//值得买接口
+			'/topic': {
+				target: 'https://m.you.163.com/topic/v1/know/navWap.json',
+				changeOrigin: true, //允许跨域
+				pathRewrite:{
+					"^/topic":""
+				}
+			},
 		}
 	},
 	configureWebpack:{

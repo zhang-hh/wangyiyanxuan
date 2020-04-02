@@ -6,7 +6,7 @@
                     <form action="/">
                         <div class="searchContect">
                             <div class="left">
-                                <i class="ico iconfont icon-search1187938easyiconnet"></i>
+                                <i class="ico iconfont icon-search"></i>
                                 <input type="text"
                                        v-model.trim="value"
                                        class="ipt"
@@ -68,15 +68,16 @@
         },
 		methods: {
 			onCancel() {
-				console.log('----')
-				this.$router.replace(`/${this.$route.query.fromPage}`)
+				let path =JSON.parse(sessionStorage.getItem('path'))
+				this.$router.replace(`/${path}`)
 			},
 			switchNav(index){
 				this.navIndex = index;
             }
 		},
         mounted(){
-	        console.log(this.$route.query)
+	        let path = this.$route.query.fromPage;
+	        sessionStorage.setItem('path',JSON.stringify(path))
         },
 	}
 </script>
