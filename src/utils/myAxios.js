@@ -3,7 +3,7 @@ import {BASE_URL} from '@/config';
 
 const instance = axios.create({
 	baseURL: BASE_URL,
-	timeout: 1000,
+	timeout: 4000,
 	headers: {'Content-Type': 'application/x-www-form-urlencoded'}
 });
 

@@ -153,7 +153,7 @@
         width 528px
         height 1097px
         padding 30px
-        padding-bottom 21px
+        padding-top 0
         margin-left 162px
         margin-top 30px
         overflow hidden
@@ -168,7 +168,6 @@
                     height 100%
             .cateList
                 width 528px
-                /*height 680px*/
                 .list
                     width 534px
                     overflow: hidden;

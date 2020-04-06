@@ -36,6 +36,22 @@ module.exports = {
 					"^/topic":""
 				}
 			},
+			//值得买瀑布流第一屏
+			'/recManual': {
+				target: 'https://m.you.163.com/topic/v1/find/recManual.json',
+				changeOrigin: true, //允许跨域
+				pathRewrite:{
+					"^/recManual":""
+				}
+			},
+			//值得买瀑布流触底加载
+			'/recAuto': {
+				target: `https://m.you.163.com/topic/v1/find/recAuto.json`,
+				changeOrigin: true, //允许跨域
+				pathRewrite:{
+					"^/recAuto":""
+				}
+			},
 		}
 	},
 	configureWebpack:{

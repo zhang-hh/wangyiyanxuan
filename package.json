@@ -22,7 +22,8 @@
     "vant": "^2.5.8",
     "vue": "^2.6.11",
     "vue-awesome-swiper": "^4.1.0",
-    "vue-router": "^3.1.6"
+    "vue-router": "^3.1.6",
+    "vue-waterfall2": "^1.9.6"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.2.0",
