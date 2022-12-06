@@ -15,7 +15,7 @@
     "core-js": "^3.6.4",
     "lodash": "^4.17.15",
     "postcss-px2rem": "^0.3.0",
-    "qs": "^6.9.3",
+    "qs": "^6.9.7",
     "stylus": "^0.54.7",
     "stylus-loader": "^3.0.2",
     "swiper": "^5.3.6",
